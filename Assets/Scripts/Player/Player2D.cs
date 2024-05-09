@@ -18,7 +18,8 @@ public class Player2D : MonoBehaviour, IHaveHorizontalMovement
     }
     private void Start()
     {
-        SpawnerOnLoad.Instance.TrySpawn(gameObject);
+        if (SpawnerOnLoad.Instance != null)
+            SpawnerOnLoad.Instance.TrySpawn(gameObject);
     }
     public void Flip()
     {        
