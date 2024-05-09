@@ -4,7 +4,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     private Player2D _player;
-    private bool _isJumping = false;
+    
 
     private float HorizontalMove => _player.HorizontalMove();
     private bool IsFacingRight => _player.IsFacingRight;
@@ -15,14 +15,14 @@ public class PlayerController : MonoBehaviour
     }
     private void Update()
     {
-        
+        if(!_player.IsControlled) return;
         if (Input.GetKeyDown(KeyCode.Space))
         {  
-            _isJumping = true;
+            _player.isJumping = true;
         }
         if (Input.GetKeyUp(KeyCode.Space))
         {
-            _isJumping = false;
+            _player.isJumping = false;
         }
         
         _player.ApplyHorizontalMove(Input.GetAxisRaw("Horizontal"));
@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         _player.UpdateVelocity();
-        if (_isJumping)
+        if (_player.isJumping)
         {
             _player.Jump();
         }

@@ -7,14 +7,14 @@ public class Interaction : MonoBehaviour
     [SerializeField] private Button _button;
 
     [Header("Implenets IInteraction interface")]
-    [SerializeField] private MonoBehaviour _interection;
+    [SerializeField] private MonoBehaviour _interaction;
 
     private void OnValidate()
     {
-        if (_interection is IInteraction) return;
+        if (_interaction is IInteraction) return;
 
-        Debug.LogWarning(_interection.name + " must be implement " + nameof(IInteraction));
-        _interection = null;
+        Debug.LogWarning(_interaction.name + " must be implement " + nameof(IInteraction));
+        _interaction = null;
         
     }
     
@@ -24,7 +24,7 @@ public class Interaction : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             _button.gameObject.SetActive(true);
-            _button.onClick.AddListener(((IInteraction)_interection).OnClick);
+            _button.onClick.AddListener(((IInteraction)_interaction).OnClick);
         }
     }
     private void OnTriggerExit2D(Collider2D other)
@@ -33,7 +33,7 @@ public class Interaction : MonoBehaviour
 
         if (other.gameObject.CompareTag("Player"))
         {
-            _button.onClick.RemoveListener(((IInteraction)_interection).OnClick);
+            _button.onClick.RemoveListener(((IInteraction)_interaction).OnClick);
             _button.gameObject.SetActive(false);
         }
     }
