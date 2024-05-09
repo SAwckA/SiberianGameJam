@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -95,7 +95,175 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: ToxicFrogPurpleBlue_Explosion_0
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 15
+        width: 21
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0440a47910abf74497cd8a48dbe74dc
+      internalID: -1545100838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToxicFrogPurpleBlue_Explosion_1
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 15
+        width: 23
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cd118a90884baf47bbbcc961166e21b
+      internalID: 494701279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToxicFrogPurpleBlue_Explosion_2
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 15
+        width: 24
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7295fd3c01d8024997ae857fb29741e
+      internalID: 963058697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToxicFrogPurpleBlue_Explosion_3
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 16
+        width: 25
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 583b7e822e61c2b43adef8c0f0dbc97d
+      internalID: 5438491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToxicFrogPurpleBlue_Explosion_4
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 17
+        width: 27
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7167361d60cd76a47bdf78fa7e08a497
+      internalID: 615039233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToxicFrogPurpleBlue_Explosion_5
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 18
+        width: 27
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6285515fa2b9a914684f64514c37ab06
+      internalID: 1052922638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToxicFrogPurpleBlue_Explosion_6
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 20
+        width: 29
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a6f6499261d8f646a7e11864702f686
+      internalID: 1223575923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToxicFrogPurpleBlue_Explosion_7
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 23
+        width: 49
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc3274b9495c60e41b78fd896425b7fa
+      internalID: 950788244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -106,7 +274,15 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ToxicFrogPurpleBlue_Explosion_0: -1545100838
+      ToxicFrogPurpleBlue_Explosion_1: 494701279
+      ToxicFrogPurpleBlue_Explosion_2: 963058697
+      ToxicFrogPurpleBlue_Explosion_3: 5438491
+      ToxicFrogPurpleBlue_Explosion_4: 615039233
+      ToxicFrogPurpleBlue_Explosion_5: 1052922638
+      ToxicFrogPurpleBlue_Explosion_6: 1223575923
+      ToxicFrogPurpleBlue_Explosion_7: 950788244
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
