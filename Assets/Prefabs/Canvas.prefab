@@ -12,13 +12,14 @@ GameObject:
   - component: {fileID: 4979966932157480380}
   - component: {fileID: 3786015947764678178}
   - component: {fileID: 2768653371714862910}
+  - component: {fileID: 7012991458830027229}
   m_Layer: 5
   m_Name: InteractionButton
-  m_TagString: Untagged
+  m_TagString: InteractionButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &8817982257821953292
 RectTransform:
   m_ObjectHideFlags: 0
@@ -37,7 +38,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 93.381775, y: 86.6}
-  m_SizeDelta: {x: 160, y: 160}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4979966932157480380
 CanvasRenderer:
@@ -121,6 +122,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &7012991458830027229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2798527939372890444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb592fb576ba48c459fa60b7ee377c2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4458309271475010664
 GameObject:
   m_ObjectHideFlags: 0
@@ -496,7 +509,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2509682044253066330
 RectTransform:
   m_ObjectHideFlags: 0
@@ -569,7 +582,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f45cac4f19087124e84117789a274380, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _textGUI: {fileID: 8538422302368994303}
+  _button: {fileID: 6292127015775396883}
   _img: {fileID: 1551476042330219862}
+  _interactionButton: {fileID: 7012991458830027229}
 --- !u!1 &7310273305651975810
 GameObject:
   m_ObjectHideFlags: 0
@@ -602,10 +618,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2509682044253066330}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -844, y: 96}
-  m_SizeDelta: {x: 189.087, y: 189.087}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 98, y: -75}
+  m_SizeDelta: {x: 189.08704, y: 189.087}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3446322622328279892
 CanvasRenderer:
@@ -737,8 +753,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 150
-  m_fontSizeBase: 150
+  m_fontSize: 75
+  m_fontSizeBase: 75
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 0

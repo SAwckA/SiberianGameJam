@@ -25,34 +25,18 @@ public class Player2D : MonoBehaviour, IHaveHorizontalMovement
             SpawnerOnLoad.Instance.TrySpawn(gameObject);
     }
 
-    private void OnEnable()
+    public void ControllerActive(bool isControlled)
     {
-        DialogWindow.OnDialogStarted += () =>
+        _isControlled = isControlled;
+
+        if (!isControlled)
         {
             _horizontalMove = 0;
             isJumping = false;
-            _isControlled = false;
-        };
-        DialogWindow.OnDialogEnded += () =>
-        {
-            _isControlled = true;
-        };
+        }
+        
+        
     }
-
-    private void OnDisable()
-    {
-        DialogWindow.OnDialogStarted -= () =>
-        {
-            _horizontalMove = 0;
-            isJumping = false;
-            _isControlled = false;
-        };
-        DialogWindow.OnDialogEnded -= () =>
-        {
-            _isControlled = true;
-        };
-    }
-
     public void Flip()
     {        
         Vector3 theScale = transform.localScale;

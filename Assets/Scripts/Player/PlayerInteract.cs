@@ -11,7 +11,7 @@ public class PlayerInteract : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.E))
         {  
-            _button.onClick.Invoke();
+            _button.onClick?.Invoke();
         }
     }
 
