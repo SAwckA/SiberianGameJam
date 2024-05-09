@@ -4,7 +4,9 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Collider2D))]
 public class Interaction : MonoBehaviour
 {
+    
     [SerializeField] private Button _button;
+
 
     [Header("Implenets IInteraction interface")]
     [SerializeField] private MonoBehaviour _interaction;

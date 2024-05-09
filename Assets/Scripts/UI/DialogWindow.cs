@@ -7,25 +7,22 @@ using System;
 public class DialogWindow : MonoBehaviour
 {
     private Dialog.Text[] _arrayOfMsg;
-    private TextMeshProUGUI _textGUI;
-    private Button _button;
+    [SerializeField] private TextMeshProUGUI _textGUI;
+    [SerializeField] private Button _button;
     private int _currentMsgIndex = 0;
     [SerializeField] private Image _img;
-    public static event Action OnDialogStarted;
-    public static event Action OnDialogEnded;
-
+    [SerializeField] private InteractionButton _interactionButton;
+    private Player2D _player;
     private void Awake()
     {
-        _textGUI = GetComponentInChildren<TextMeshProUGUI>();
-        _button = GetComponentInChildren<Button>();
-
         gameObject.SetActive(false);
-
+        _player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player2D>();
     }
 
     public void SetText(Dialog.Text[] texts)
     {
-        OnDialogStarted?.Invoke();
+        _player.ControllerActive(false);
+        _interactionButton.gameObject.SetActive(false);
         _arrayOfMsg = texts;
         _img.sprite = _arrayOfMsg[_currentMsgIndex].sprite;
         _textGUI.text = _arrayOfMsg[_currentMsgIndex].msg;
@@ -41,7 +38,8 @@ public class DialogWindow : MonoBehaviour
             _textGUI.text = "";
             _button.onClick.RemoveListener(OnButtonClick);
             gameObject.SetActive(false);
-            OnDialogEnded?.Invoke();
+            _player.ControllerActive(true);
+            _interactionButton.gameObject.SetActive(true);
             return;
         }
 

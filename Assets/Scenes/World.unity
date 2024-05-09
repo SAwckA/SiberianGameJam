@@ -10083,7 +10083,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2768653371714862910, guid: 5aeb17d9a0af01d418f74fe3fb6a4c3a, type: 3}
   m_PrefabInstance: {fileID: 8013702192514734064}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2100070699}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
@@ -37778,23 +37778,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!1 &2100070699 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2798527939372890444, guid: 5aeb17d9a0af01d418f74fe3fb6a4c3a, type: 3}
-  m_PrefabInstance: {fileID: 8013702192514734064}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2100070703
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2100070699}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb592fb576ba48c459fa60b7ee377c2c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2103641008
 GameObject:
   m_ObjectHideFlags: 0
@@ -38041,25 +38024,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2798527939372890444, guid: 5aeb17d9a0af01d418f74fe3fb6a4c3a, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4458309271475010664, guid: 5aeb17d9a0af01d418f74fe3fb6a4c3a, type: 3}
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
-    - target: {fileID: 6864900963489774998, guid: 5aeb17d9a0af01d418f74fe3fb6a4c3a, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2798527939372890444, guid: 5aeb17d9a0af01d418f74fe3fb6a4c3a, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2100070703}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5aeb17d9a0af01d418f74fe3fb6a4c3a, type: 3}
 --- !u!114 &8013702192514734067 stripped
 MonoBehaviour:
@@ -38076,6 +38048,7 @@ MonoBehaviour:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 8013702192514734064}
   - {fileID: 260525228}
   - {fileID: 840660192}
   - {fileID: 120548778}
@@ -38083,7 +38056,6 @@ SceneRoots:
   - {fileID: 6350437215232103716}
   - {fileID: 2103641009}
   - {fileID: 322851261}
-  - {fileID: 8013702192514734064}
   - {fileID: 1817902950}
   - {fileID: 1531547155}
   - {fileID: 1462314105}
