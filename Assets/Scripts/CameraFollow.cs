@@ -14,6 +14,7 @@ public class CameraFollow : MonoBehaviour
     [SerializeField] private float _moveSpeed = 0.15f;
     [Range(-10f, 10f)]
     [SerializeField] private float _offsetY = 1.7f;
+    public float OffSetY => _offsetY;
     
     private void Start()
     {

@@ -1,23 +1,31 @@
 using UnityEngine;
-using UnityEngine.Tilemaps;
 
-public class Player2D : Entity2D
+[RequireComponent(typeof(Rigidbody2D))]
+public class Player2D : MonoBehaviour, IHaveHorizontalMovement
 {
     [Header("Movement Settings")]
     [Range(0,100f)]
     [SerializeField] private float _speed = 8f;
     [Range(0, 100f)]
     [SerializeField] private float _jumpForce = 60f;
+    private Rigidbody2D _rigidbody;
+    private float _horizontalMove = 0f;
+    public bool IsFacingRight => Mathf.Sign(transform.localScale.x) > -1;
 
-    [Space]
-
-    [Header("Ground Checker Settings")]
-    [Range(-5f,5f)]
-    [SerializeField] private float _checkGrounOffsetY = -0.8f;
-    [Range(0,5f)]
-    [SerializeField] private float _checkGroundRadius = 0.41f;
-    private bool _isGrounded = false;
-    public bool IsGrounded => _isGrounded;
+    private void Awake()
+    {
+        _rigidbody = GetComponent<Rigidbody2D>();
+    }
+    private void Start()
+    {
+        SpawnerOnLoad.Instance.TrySpawn(gameObject);
+    }
+    public void Flip()
+    {        
+        Vector3 theScale = transform.localScale;
+        theScale.x *= -1;
+        transform.localScale = theScale;
+    }
     public void UpdateVelocity()
     {
         _rigidbody.velocity = new Vector2(_horizontalMove, _rigidbody.velocity.y);
@@ -28,30 +36,13 @@ public class Player2D : Entity2D
     }
     public void Jump()
     {
+        if (Mathf.Abs(_rigidbody.velocity.y) > 0.001) return;
+        
         _rigidbody.AddForce(transform.up * _jumpForce, ForceMode2D.Impulse);
     }
-    public void CheckGround()
+
+    public float HorizontalMove()
     {
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(new Vector2(transform.position.x, transform.position.y + _checkGrounOffsetY), _checkGroundRadius);
-
-        int entityCount = 0;
-
-        foreach (Collider2D collider in colliders)
-        {
-            if (collider.TryGetComponent<Entity2D>(out var entity))
-            {
-                entityCount++;
-            }
-                
-        }
-        _isGrounded = (colliders.Length - entityCount) > 0;
+        return _horizontalMove;
     }
-
-    
-    #if UNITY_EDITOR
-    private void OnDrawGizmos()
-    {
-        Gizmos.DrawWireSphere(new Vector2(transform.position.x, transform.position.y + _checkGrounOffsetY), _checkGroundRadius);
-    }
-    #endif
 }

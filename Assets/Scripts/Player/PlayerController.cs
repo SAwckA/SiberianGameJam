@@ -4,10 +4,10 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     private Player2D _player;
+    private bool _isJumping = false;
 
-    private float HorizontalMove => _player.HorizontalMove;
+    private float HorizontalMove => _player.HorizontalMove();
     private bool IsFacingRight => _player.IsFacingRight;
-    private bool IsGrounded => _player.IsGrounded;
 
     private void Awake()
     {
@@ -16,11 +16,15 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         
-        if (Input.GetKeyDown(KeyCode.Space) && IsGrounded)
-        {
-            _player.Jump();
+        if (Input.GetKeyDown(KeyCode.Space))
+        {  
+            _isJumping = true;
         }
-
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            _isJumping = false;
+        }
+        
         _player.ApplyHorizontalMove(Input.GetAxisRaw("Horizontal"));
 
         if (HorizontalMove > 0 && !IsFacingRight)
@@ -36,7 +40,10 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         _player.UpdateVelocity();
-        _player.CheckGround();
+        if (_isJumping)
+        {
+            _player.Jump();
+        }
     }
     
 }

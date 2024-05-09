@@ -108,4 +108,4 @@ MonoBehaviour:
   _playerTransform: {fileID: 0}
   _playerTag: 
   _moveSpeed: 0.15
-  _offsetY: 1.7
+  _offsetY: 1
