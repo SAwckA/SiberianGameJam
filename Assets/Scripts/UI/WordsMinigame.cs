@@ -4,7 +4,6 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-[RequireComponent(typeof(Player2D))]
 public class WordsMinigame : MonoBehaviour
 {
 
@@ -32,7 +31,8 @@ public class WordsMinigame : MonoBehaviour
             }
         }
         inputField = GetComponentInChildren<TMP_InputField>();
-        player = GetComponent<Player2D>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player2D>();
+        Debug.Log(player);
 
         HideMinigameInterface();
     }
@@ -40,7 +40,17 @@ public class WordsMinigame : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (isShowMinigame) {
+            if (Input.GetKeyDown(KeyCode.Escape)) {
+                HideMinigameInterface();
+                return;
+            }
+            if (Input.GetKeyDown(KeyCode.Return)) {
+                CastSpell();
+                return;
+            }
+
+        }
     }
 
     public void CastSpell() 
@@ -62,7 +72,9 @@ public class WordsMinigame : MonoBehaviour
     {
         castSpellButton.gameObject.SetActive(true);
         inputField.gameObject.SetActive(true);
-        // player
+        inputField.ActivateInputField();
+        inputField.Select();
+        player.ControllerActive(false);
         isShowMinigame = true;
     }
 
@@ -70,6 +82,7 @@ public class WordsMinigame : MonoBehaviour
     {
         castSpellButton.gameObject.SetActive(false);
         inputField.gameObject.SetActive(false);
+        player.ControllerActive(true);
         isShowMinigame = false;
     }
 }
