@@ -101,9 +101,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 5
-        y: 246
+        y: 248
         width: 20
-        height: 38
+        height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -111,8 +111,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f27229cc09c731e4fbbdf26478933c5d
-      internalID: -1793280945
+      spriteID: d3bca53d377b1f2498cc0dba4267201c
+      internalID: 1404216267
       vertices: []
       indices: 
       edges: []
@@ -122,28 +122,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 5
-        y: 198
-        width: 20
-        height: 37
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 77db5610dbe8e194487831c18b9e09f2
-      internalID: 41643850
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: B_witch_idle_2
-      rect:
-        serializedVersion: 2
-        x: 5
-        y: 150
+        y: 200
         width: 20
         height: 35
       alignment: 0
@@ -153,8 +132,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d3897d0ccf0098443ad05fed71dbc5e4
-      internalID: -1496812787
+      spriteID: fea9c8e798335474a937301c7b47e3d7
+      internalID: 1711351023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B_witch_idle_2
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 152
+        width: 20
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 919fe841fa75ede419d766725fc760d5
+      internalID: 380697890
       vertices: []
       indices: 
       edges: []
@@ -164,9 +164,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 6
-        y: 102
+        y: 104
         width: 19
-        height: 36
+        height: 34
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -174,8 +174,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 12db7da7bf0307d4caefde36ec576e1c
-      internalID: -350621692
+      spriteID: b649efdaeebbe3641b7ca49cbd0a7e58
+      internalID: 1524546007
       vertices: []
       indices: 
       edges: []
@@ -185,9 +185,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 6
-        y: 54
+        y: 56
         width: 19
-        height: 39
+        height: 37
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -195,8 +195,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e11b9eb2d6bcccb49a7e665de23f70f9
-      internalID: 886477088
+      spriteID: dd2e9d73c45dd104f9fd2e001e1f5d2a
+      internalID: -1318502281
       vertices: []
       indices: 
       edges: []
@@ -206,9 +206,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 5
-        y: 6
+        y: 8
         width: 21
-        height: 38
+        height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -216,8 +216,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7183997891820584aab86b2067c9995c
-      internalID: -447863722
+      spriteID: 41c28410e710bf54083f434a6e0decc7
+      internalID: 839217388
       vertices: []
       indices: 
       edges: []
@@ -233,12 +233,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      B_witch_idle_0: -1793280945
-      B_witch_idle_1: 41643850
-      B_witch_idle_2: -1496812787
-      B_witch_idle_3: -350621692
-      B_witch_idle_4: 886477088
-      B_witch_idle_5: -447863722
+      B_witch_idle_0: 1404216267
+      B_witch_idle_1: 1711351023
+      B_witch_idle_2: 380697890
+      B_witch_idle_3: 1524546007
+      B_witch_idle_4: -1318502281
+      B_witch_idle_5: 839217388
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
