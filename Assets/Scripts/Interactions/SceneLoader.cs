@@ -8,7 +8,8 @@ public class SceneLoader : MonoBehaviour, IInteraction
 
     public void OnClick()
     {
-        SpawnerOnLoad.Instance.SetPosition(_scenePosition);
+        if (SpawnerOnLoad.Instance)
+            SpawnerOnLoad.Instance.SetPosition(_scenePosition);
         SceneManager.LoadScene(_sceneNumber);
     }
 
