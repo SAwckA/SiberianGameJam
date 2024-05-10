@@ -1,12 +1,13 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class WordsMinigame : MonoBehaviour
 {
-
     private Button castSpellButton;
     private Button showMinigameButton;
     private TMP_InputField inputField;
@@ -35,7 +36,9 @@ public class WordsMinigame : MonoBehaviour
         }
 
         foreach (WordSpell spell in GetComponentsInChildren<WordSpell>()) {
-            spells.Add(spell);
+            if (spell.isActiveAndEnabled) {
+                spells.Add(spell);
+            }
         }
 
         inputField = GetComponentInChildren<TMP_InputField>();
@@ -67,12 +70,16 @@ public class WordsMinigame : MonoBehaviour
         HideMinigameInterface();
         
         foreach (WordSpell spell in spells) {
-            if (spell.getWord() == inputField.text) {
+            if (ClearString(spell.getWord()).Equals(ClearString(inputField.text))) {
                 spellParticleSystem.Play();
                 spell.spellConsumer.Invoke();
                 break;
             }
         }
+    }
+
+    private String ClearString(String str) {
+        return Regex.Replace(str, "[^a-zA-Z]+", "").ToLower();
     }
 
     public void ToggleMinigameInterface() 
