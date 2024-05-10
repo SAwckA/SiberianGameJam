@@ -1,7 +1,5 @@
-
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.SceneManagement;
 
 namespace StealGame{
     [RequireComponent(typeof(Collider2D))]
@@ -34,7 +32,7 @@ namespace StealGame{
             #if UNITY_EDITOR
             if (Input.GetKeyDown(KeyCode.F))
             {
-                _isBorderOn =!_isBorderOn;
+                _isBorderOn =! _isBorderOn;
             }
             #endif
 
