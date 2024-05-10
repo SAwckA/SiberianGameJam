@@ -1,7 +1,7 @@
 
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 namespace StealGame{
     [RequireComponent(typeof(Collider2D))]
@@ -76,10 +76,14 @@ namespace StealGame{
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            Debug.Log("Enter");
             if (other.TryGetComponent<CircleMover>(out var _))
             {
                 SetStartPosition();
+            }
+            else if(other.TryGetComponent<SceneLoader>(out var sceneLoader))
+            {
+                Cursor.visible = true;
+                sceneLoader.OnClick();
             }
         }
 
