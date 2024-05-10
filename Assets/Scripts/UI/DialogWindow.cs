@@ -21,7 +21,7 @@ public class DialogWindow : MonoBehaviour
 
     public void SetText(Dialog.Text[] texts)
     {
-        _player.ControllerActive(false);
+        _player.SetControllerActive(false);
         _interactionButton.gameObject.SetActive(false);
         _arrayOfMsg = texts;
         _img.sprite = _arrayOfMsg[_currentMsgIndex].sprite;
@@ -38,7 +38,7 @@ public class DialogWindow : MonoBehaviour
             _textGUI.text = "";
             _button.onClick.RemoveListener(OnButtonClick);
             gameObject.SetActive(false);
-            _player.ControllerActive(true);
+            _player.SetControllerActive(true);
             _interactionButton.gameObject.SetActive(true);
             return;
         }

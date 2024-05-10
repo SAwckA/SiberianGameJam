@@ -10,7 +10,10 @@ public class WordsMinigame : MonoBehaviour
     private Button castSpellButton;
     private Button showMinigameButton;
     private TMP_InputField inputField;
+    private ParticleSystem spellParticleSystem;
     private bool isShowMinigame = false;
+
+    private List<WordSpell> spells = new List<WordSpell>();
 
     private Player2D player;
 
@@ -30,9 +33,15 @@ public class WordsMinigame : MonoBehaviour
                 showMinigameButton = button;
             }
         }
+
+        foreach (WordSpell spell in GetComponentsInChildren<WordSpell>()) {
+            spells.Add(spell);
+        }
+
         inputField = GetComponentInChildren<TMP_InputField>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player2D>();
-        Debug.Log(player);
+
+        spellParticleSystem = player.gameObject.GetComponentInChildren<ParticleSystem>();
 
         HideMinigameInterface();
     }
@@ -56,7 +65,14 @@ public class WordsMinigame : MonoBehaviour
     public void CastSpell() 
     {
         HideMinigameInterface();
-        Debug.Log(inputField.text);
+        
+        foreach (WordSpell spell in spells) {
+            if (spell.getWord() == inputField.text) {
+                spellParticleSystem.Play();
+                spell.spellConsumer.Invoke();
+                break;
+            }
+        }
     }
 
     public void ToggleMinigameInterface() 
@@ -74,7 +90,7 @@ public class WordsMinigame : MonoBehaviour
         inputField.gameObject.SetActive(true);
         inputField.ActivateInputField();
         inputField.Select();
-        player.ControllerActive(false);
+        player.SetControllerActive(false);
         isShowMinigame = true;
     }
 
@@ -82,7 +98,7 @@ public class WordsMinigame : MonoBehaviour
     {
         castSpellButton.gameObject.SetActive(false);
         inputField.gameObject.SetActive(false);
-        player.ControllerActive(true);
+        player.SetControllerActive(true);
         isShowMinigame = false;
     }
 }

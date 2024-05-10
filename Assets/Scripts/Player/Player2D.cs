@@ -25,7 +25,7 @@ public class Player2D : MonoBehaviour, IHaveHorizontalMovement
             SpawnerOnLoad.Instance.TrySpawn(gameObject);
     }
 
-    public void ControllerActive(bool isControlled)
+    public void SetControllerActive(bool isControlled)
     {
         _isControlled = isControlled;
 
