@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
@@ -15,9 +16,13 @@ public class Player2D : MonoBehaviour, IHaveHorizontalMovement
     private bool _isControlled = true;
     public bool IsControlled => _isControlled;
 
+    private SpriteRenderer _spriteRenderer;
+    private bool _isVisible = true;
+
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
+        _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
     }
     private void Start()
     {
@@ -25,7 +30,7 @@ public class Player2D : MonoBehaviour, IHaveHorizontalMovement
             SpawnerOnLoad.Instance.TrySpawn(gameObject);
     }
 
-    public void ControllerActive(bool isControlled)
+    public void SetControllerActive(bool isControlled)
     {
         _isControlled = isControlled;
 
@@ -61,5 +66,14 @@ public class Player2D : MonoBehaviour, IHaveHorizontalMovement
     public float HorizontalMove()
     {
         return _horizontalMove;
+    }
+
+    public void ToggleVisibility() {
+        _isVisible = !_isVisible;
+        _spriteRenderer.color = _isVisible? Color.white : new Color(1f, 1f, 1f, 0.3f);
+    }
+
+    public bool IsVisible() {
+        return _isVisible;
     }
 }
