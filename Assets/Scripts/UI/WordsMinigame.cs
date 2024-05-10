@@ -26,7 +26,7 @@ public class WordsMinigame : MonoBehaviour
 
     void Awake() 
     {
-        foreach (Button button in GetComponentsInChildren<Button>()) {
+        foreach (Button button in GetComponentsInChildren<Button>(true)) {
             if (button.name == "CastSpellButton") {
                 castSpellButton = button;
             }
@@ -35,13 +35,13 @@ public class WordsMinigame : MonoBehaviour
             }
         }
 
-        foreach (WordSpell spell in GetComponentsInChildren<WordSpell>()) {
+        foreach (WordSpell spell in GetComponentsInChildren<WordSpell>(true)) {
             if (spell.isActiveAndEnabled) {
                 spells.Add(spell);
             }
         }
 
-        inputField = GetComponentInChildren<TMP_InputField>();
+        inputField = GetComponentInChildren<TMP_InputField>(true);
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player2D>();
 
         spellParticleSystem = player.gameObject.GetComponentInChildren<ParticleSystem>();

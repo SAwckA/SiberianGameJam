@@ -1,5 +1,6 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class Player2D : MonoBehaviour, IHaveHorizontalMovement
@@ -26,8 +27,8 @@ public class Player2D : MonoBehaviour, IHaveHorizontalMovement
     }
     private void Start()
     {
-        if (SpawnerOnLoad.Instance != null)
-            SpawnerOnLoad.Instance.TrySpawn(gameObject);
+        // if (SpawnerOnLoad.Instance != null)
+        //     SpawnerOnLoad.Instance.TrySpawn(gameObject);
     }
 
     public void SetControllerActive(bool isControlled)

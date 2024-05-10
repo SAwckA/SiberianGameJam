@@ -8,9 +8,9 @@ public class SceneLoader : MonoBehaviour, IInteraction
 
     public void OnClick()
     {
-        if (SpawnerOnLoad.Instance)
-            SpawnerOnLoad.Instance.SetPosition(_scenePosition);
-        SceneManager.LoadScene(_sceneNumber);
+        // if (SpawnerOnLoad.Instance)
+        //     SpawnerOnLoad.Instance.SetPosition(_scenePosition);
+        // SceneManager.LoadScene(_sceneNumber);
     }
 
 }
