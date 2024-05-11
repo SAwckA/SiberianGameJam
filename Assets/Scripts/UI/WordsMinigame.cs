@@ -26,7 +26,7 @@ public class WordsMinigame : MonoBehaviour
 
     void Awake() 
     {
-        foreach (Button button in GetComponentsInChildren<Button>()) {
+        foreach (Button button in GetComponentsInChildren<Button>(true)) {
             if (button.name == "CastSpellButton") {
                 castSpellButton = button;
             }
@@ -35,13 +35,13 @@ public class WordsMinigame : MonoBehaviour
             }
         }
 
-        foreach (WordSpell spell in GetComponentsInChildren<WordSpell>()) {
+        foreach (WordSpell spell in GetComponentsInChildren<WordSpell>(true)) {
             if (spell.isActiveAndEnabled) {
                 spells.Add(spell);
             }
         }
 
-        inputField = GetComponentInChildren<TMP_InputField>();
+        inputField = GetComponentInChildren<TMP_InputField>(true);
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player2D>();
 
         spellParticleSystem = player.gameObject.GetComponentInChildren<ParticleSystem>();
@@ -70,16 +70,17 @@ public class WordsMinigame : MonoBehaviour
         HideMinigameInterface();
         
         foreach (WordSpell spell in spells) {
-            if (ClearString(spell.getWord()).Equals(ClearString(inputField.text))) {
+            if (ClearString(spell.getWord()) == ClearString(inputField.text)) {
                 spellParticleSystem.Play();
                 spell.spellConsumer.Invoke();
+                Debug.Log("CastSpell " + spell.getWord());
                 break;
             }
         }
     }
 
     private String ClearString(String str) {
-        return Regex.Replace(str, "[^a-zA-Z]+", "").ToLower();
+        return str.ToLower();
     }
 
     public void ToggleMinigameInterface() 
