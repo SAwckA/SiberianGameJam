@@ -35,10 +35,8 @@ public class WordsMinigame : MonoBehaviour
             }
         }
 
-        foreach (WordSpell spell in GetComponentsInChildren<WordSpell>(true)) {
-            if (spell.isActiveAndEnabled) {
-                spells.Add(spell);
-            }
+        foreach (WordSpell spell in GetComponentsInChildren<WordSpell>()) {
+            spells.Add(spell);
         }
 
         inputField = GetComponentInChildren<TMP_InputField>(true);
@@ -94,6 +92,7 @@ public class WordsMinigame : MonoBehaviour
 
     private void ShowMinigameInterface() 
     {
+        EventBus.hideIteractionButton?.Invoke();
         castSpellButton.gameObject.SetActive(true);
         inputField.gameObject.SetActive(true);
         inputField.ActivateInputField();
