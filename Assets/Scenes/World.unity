@@ -55668,7 +55668,7 @@ MonoBehaviour:
     setStage: 1
     onStage: 0
   - text: "\u0414\u0443\u043C\u0430\u044E \u0441\u0442\u043E\u0438\u0442 \u043F\u043E\u0439\u0442\u0438
-      \u043D\u0430 \u043B\u0435\u0432\u043E))"
+      \u043D\u0430\u043B\u0435\u0432\u043E))"
     sprite: {fileID: 1404216267, guid: ad3ac4d25230813428bd0bd458c9cd87, type: 3}
     setStage: 1
     onStage: 0
