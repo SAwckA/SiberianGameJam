@@ -12,4 +12,6 @@ public static class EventBus
     public static Action<bool> playerSetInvisible;
 
     public static Action<IEnumerable<DialogSource.Phrase>> processDialog;
+
+    public static Action<IEnumerable<DialogSource.Phrase>> continueTeleport;
 }

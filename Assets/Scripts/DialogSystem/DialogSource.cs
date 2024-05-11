@@ -13,6 +13,11 @@ public class DialogSource : BaseInteraction
         public Sprite sprite;
         public int setStage;
         public int onStage;
+
+        public Phrase(string text)
+        {
+            this.text = text;
+        }
     }
 
     protected override void OnClick() {
