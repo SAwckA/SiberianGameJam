@@ -71,6 +71,7 @@ public class Player2D : MonoBehaviour, IHaveHorizontalMovement
 
     public void ToggleVisibility() {
         _isVisible = !_isVisible;
+        EventBus.playerSetInvisible?.Invoke(_isVisible);
         _spriteRenderer.color = _isVisible? Color.white : new Color(1f, 1f, 1f, 0.3f);
     }
 
