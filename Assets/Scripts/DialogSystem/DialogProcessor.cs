@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
@@ -12,6 +11,7 @@ public class DialogProcessor : MonoBehaviour
     TMP_Text textField;
     Image speakerImagePlaceholder;
 
+    Vector2 pictureSize;
     Player2D player;
     IEnumerator<DialogSource.Phrase> phrasesIterator;
 
@@ -22,6 +22,7 @@ public class DialogProcessor : MonoBehaviour
         nextButton = GetComponentInChildren<Button>(true);
         textField = GetComponentInChildren<TMP_Text>(true);
         speakerImagePlaceholder = GetComponentsInChildren<Image>(true)[2];
+        pictureSize = speakerImagePlaceholder.GetComponent<RectTransform>().sizeDelta;
 
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player2D>();
         EventBus.processDialog += StartDialog;
@@ -40,13 +41,7 @@ public class DialogProcessor : MonoBehaviour
         nextButton.onClick.AddListener(OnNextButtonClick);
         EventBus.hideIteractionButton?.Invoke();
 
-        if (phrasesIterator.MoveNext())
-        {
-            textField.text = phrasesIterator.Current.text;
-            speakerImagePlaceholder.sprite = phrasesIterator.Current.sprite;
-        } else {
-            EndDialog();
-        }
+        OnNextButtonClick();
         
     }
 
@@ -55,6 +50,7 @@ public class DialogProcessor : MonoBehaviour
         if (phrasesIterator.MoveNext())
         {
             textField.text = phrasesIterator.Current.text;
+            speakerImagePlaceholder.GetComponent<RectTransform>().sizeDelta = phrasesIterator.Current.sprite.bounds.size * pictureSize * 5;
             speakerImagePlaceholder.sprite = phrasesIterator.Current.sprite;
         }
         else

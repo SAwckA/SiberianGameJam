@@ -1,13 +1,10 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class DialogSource : BaseInteraction
 {
-    [SerializeField] Func<bool> condition;
     [SerializeField] Phrase[] phrases;
 
     [Serializable] public class Phrase {

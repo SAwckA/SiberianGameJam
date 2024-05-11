@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,7 +7,6 @@ public class SceneChangeInteraction : BaseInteraction
 
     protected override void OnClick()
     {
-        Player2D player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player2D>();
         SceneManager.LoadScene(sceneNumber);
     }
 }
