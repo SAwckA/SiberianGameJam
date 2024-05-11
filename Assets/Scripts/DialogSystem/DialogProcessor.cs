@@ -33,7 +33,7 @@ public class DialogProcessor : MonoBehaviour
         EventBus.processDialog -= StartDialog;
     }
 
-    public void StartDialog(IEnumerable<DialogSource.Phrase> phrases, Sprite speakerSprite) 
+    public void StartDialog(IEnumerable<DialogSource.Phrase> phrases) 
     {
         gameObject.SetActive(true);
         player.SetControllerActive(false);
@@ -50,8 +50,12 @@ public class DialogProcessor : MonoBehaviour
         if (phrasesIterator.MoveNext())
         {
             textField.text = phrasesIterator.Current.text;
-            speakerImagePlaceholder.GetComponent<RectTransform>().sizeDelta = phrasesIterator.Current.sprite.bounds.size * pictureSize * 5;
-            speakerImagePlaceholder.sprite = phrasesIterator.Current.sprite;
+            if (phrasesIterator.Current.sprite != null) {
+                speakerImagePlaceholder.GetComponent<RectTransform>().sizeDelta = phrasesIterator.Current.sprite.bounds.size * pictureSize * 5;
+                speakerImagePlaceholder.sprite = phrasesIterator.Current.sprite;
+            } else{
+                speakerImagePlaceholder.color = new Color(0, 0, 0, 0);
+            }
         }
         else
         {
