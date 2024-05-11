@@ -11,5 +11,5 @@ public static class EventBus
     public static Action<UnityAction> showInteractionButton;
     public static Action showInteractionButtonWithSameState;
 
-    public static Action<IEnumerable<DialogSource.Phrase>, Sprite> processDialog;
+    public static Action<IEnumerable<DialogSource.Phrase>> processDialog;
 }

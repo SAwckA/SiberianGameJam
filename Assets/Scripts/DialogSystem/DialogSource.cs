@@ -16,7 +16,7 @@ public class DialogSource : BaseInteraction
     }
 
     protected override void OnClick() {
-        EventBus.processDialog?.Invoke(PhrasesIterator(), GetComponentInChildren<SpriteRenderer>().sprite);
+        EventBus.processDialog?.Invoke(PhrasesIterator());
     }
 
     private IEnumerable<Phrase> PhrasesIterator() {
