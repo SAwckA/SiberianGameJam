@@ -615,7 +615,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac6871541db01584dac8bed6c5c6dead, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sceneNumber: 1
+  _sceneNumber: 2
 --- !u!95 &209241731
 Animator:
   serializedVersion: 5
