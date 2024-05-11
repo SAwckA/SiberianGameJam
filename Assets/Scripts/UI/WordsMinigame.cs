@@ -70,16 +70,17 @@ public class WordsMinigame : MonoBehaviour
         HideMinigameInterface();
         
         foreach (WordSpell spell in spells) {
-            if (ClearString(spell.getWord()).Equals(ClearString(inputField.text))) {
+            if (ClearString(spell.getWord()) == ClearString(inputField.text)) {
                 spellParticleSystem.Play();
                 spell.spellConsumer.Invoke();
+                Debug.Log("CastSpell " + spell.getWord());
                 break;
             }
         }
     }
 
     private String ClearString(String str) {
-        return Regex.Replace(str, "[^a-zA-Z]+", "").ToLower();
+        return str.ToLower();
     }
 
     public void ToggleMinigameInterface() 
